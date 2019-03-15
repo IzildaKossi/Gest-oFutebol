@@ -11,6 +11,6 @@ orientada ao futebol, em detrimento de outro desporto coletivo, deveu-se princip
 maior facilidade de perceção dos seus conceitos pela grande maioria dos alunos,
 independentemente da sua faixa etária ou cultura.bol online com html, css e javascripts
 
-![](figura0.png
+![](figura0.png)
 ![](figura1.png)
 ![](figura2.png)
