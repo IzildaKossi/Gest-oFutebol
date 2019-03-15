@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sistema de Gestão de Competições de Futebol</title>
+  <link href="/styles/styleSheet.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="/scripts/competicao.js"></script>
+  <script type="text/javascript" src="/scripts/populate.js"></script>
+</head>
+
+<body>
+  <div id="sistema">
+    <div id="cabecalho"></div>
+    <div id="conteudo">
+      <div id="conteudoGeral">
+        <div id="divFormularioJogador" style="display:none; text-align: left">
+          <form id="formJogador" method="post">
+            <label for="nome" style="font-size:18px; font-family:Arial Black;">Nome:</label>
+            <br><input id="nome" name="nome" type="text" value="Introduza o nome:">
+            <br>
+            <br>
+            <label for="dataNascimento" style="font-size:18px; font-family:Arial Black;">Data de Nascimento:</label>
+            <br>
+            <input id="dataNascimento" name="dataNascimento" type="text" value="dd/mm/aaaa">
+            <br>
+            <br>
+            <label for="pais" style="font-size:18px; font-family:Arial Black;">Pais:</label>
+            <br>
+            <select id="pais" name="pais" style="width:10%; height:40px;">
+              <option value="Alemanha">Alemanha </option>
+              <option value="Argentina">Argentina </option>
+              <option value="Brazil">Brazil </option>
+              <option value="Espanha">Espanha </option>
+              <option value="França">França </option>
+              <option value="Holanda">Holanda </option>
+              <option value="Inglaterra">Inglaterra </option>
+              <option value="Itália">Itália </option>
+              <option value="Portugal">Portugal </option>
+              <option value="Uruguai">Uruguai </option>
+              </select>
+            <br>
+            <br>
+            <label for="posicao" style="font-size:18px; font-family:Arial Black;"> Posição:</label>
+            <br>
+            <select id="posicao" name="posicao" style="width:10%; height:40px;">
+              <option value="GR">GR </option>
+              <option value="DF">DF </option>
+              <option value="MC">MC </option>
+              <option value="AV">AV </option>
+              </select>
+            <br>
+            <br>
+            <label for="altura" style="font-size:18px; font-family:Arial Black;">Altura:</label>
+            <br>
+            <input id="altura" name="altura" type="text" value="0.00">
+            <br>
+            <br>
+            <br>
+            <button type="button" onclick="voltarMenuJogador()">Cancelar</button>
+            <button type="button" onclick="criarJogador()">Gravar</button>
+          </form>
+        </div>
+        <div id="divFormularioEquipa" style="display:none; text-align: left">
+          <form id="formEquipa" method="post">
+            <label for="nome" style="font-size:18px; font-family:Arial Black;">Nome:</label>
+            <br>
+            <input id="nome" name="nome" type="text" value="Introduza o nome:">
+            <br>
+            <br>
+            <label for="acronimo" style="font-size:18px; font-family:Arial Black;">Acrónimo:</label>
+            <br>
+            <input id="acronimo" name="acronimo" type="text" value="Introduza o acrónimo">
+            <br>
+            <br>
+            <label for="pais" style="font-size:18px; font-family:Arial Black;">Pais:</label>
+            <br>
+            <select name="pais" style="width:10%; height:20px;">
+              <option value="Alemanha">Alemanha </option>
+              <option value="Argentina">Argentina </option>
+              <option value="Brazil">Brazil </option>
+              <option value="Espanha">Espanha </option>
+              <option value="França">França </option>
+              <option value="Holanda">Holanda </option>
+              <option value="Inglaterra">Inglaterra </option>
+              <option value="Itália">Itália </option>
+              <option value="Portugal">Portugal </option>
+              <option value="Uruguai">Uruguai </option>
+              </select>
+            <br>
+            <br>
+            <label for="url" style="font-size:18px; font-family:Arial Black;"> Website:</label>
+            <br>
+            <input id="url" name="url" type="text" value="http://www.">
+            <br>
+            <br>
+            <label for="descricao" style="font-size:18px; font-family:Arial Black;">Descrição:</label>
+            <br>
+            <textarea id="descricao" name="descricao" type="text"></textarea>
+            <br>
+            <br>
+            <button type="button" onclick="voltarMenuEquipa()">Cancelar</button>
+            <button type="button" onclick="criarEquipa()">Gravar</button>
+          </form>
+        </div>
+        <div id="divFormularioLiga" style="display:none; text-align: left">
+          <form id="formLiga" method="post">
+            <br>
+            <br>
+            <label for="nome" style="font-size:18px; font-family:Arial Black;">Nome:</label>
+            <br>
+            <input id="nome" name="nome" type="text" value="Introduza o nome:">
+            <br>
+            <br>
+            <label for="edicao" style="font-size:18px; font-family:Arial Black;">Edição:</label>
+            <br>
+            <input id="edicao" name="edicao" type="text" value="Introduza a edição">
+            <br>
+            <br>
+            <label for="numeroEquipa" style="font-size:18px; font-family:Arial Black;">Numero de Equipas:</label>
+            <br>
+            <input id="numeroEquipa" name="numeroEquipa" type="text" value="8">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <button type="button" onclick="voltarMenuLiga()">Cancelar</button>
+            <button type="button" onclick="criarLiga()">Gravar</button>
+          </form>
+        </div>
+        <div id="divFormularioTaca" style="display:none; text-align: left">
+          <form id="formTaca" method="post">
+            <br>
+            <br>
+            <label for="nome" style="font-size:18px; font-family:Arial Black;">Nome:</label>
+            <br>
+            <input id="nome" name="nome" type="text" value="Introduza o nome:">
+            <br>
+            <br>
+            <label for="edicao" style="font-size:18px; font-family:Arial Black;">Edição:</label>
+            <br>
+            <input id="edicao" name="edicao" type="text" value="Introduza a edição">
+            <br>
+            <br>
+            <label for="numeroEquipa" style="font-size:18px; font-family:Arial Black;">Numero de Equipas:</label>
+            <br>
+            <input id="numeroEquipa" name="numeroEquipa" type="text" value="8">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <button type="button" onclick="voltarMenuTaca()">Cancelar</button>
+            <button type="button" onclick="criarTaca()">Gravar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div id="rodape"></div>
+  </div>
+</body>
+
+</html>
